@@ -2,14 +2,14 @@
 Copyright (c) 2015 mukmuk623
 
 // ==UserScript==
-// @name        AposBot
-// @namespace   AposBot
+// @name        mukBot
+// @namespace   mukBot
 // @include     http://agar.io/*
 // @version     3.0
 // @grant       none
 // ==/UserScript==
 
-var aposBotVersion = 3.0;
+var mukBotVersion = 3.0;
 
 //TODO: Team mode
 //      Detect when people are merging
