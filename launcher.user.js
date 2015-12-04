@@ -2357,15 +2357,3 @@ window.refreshTwitch = function() {
             window.setMessage([]);
             window.onmouseup = function() {};
             window.ignoreStream = false;
-        } else {
-            if (!window.ignoreStream) {
-                window.setMessage(["twitch.tv/apostolique is online right now!", "Click the screen to open the stream!", "Press E to ignore."]);
-                window.onmouseup = function() {
-                    window.open("http://www.twitch.tv/apostolique");
-                };
-            }
-        }
-    }).fail(function() {});
-}
-setInterval(window.refreshTwitch, 60000);
-window.refreshTwitch();
