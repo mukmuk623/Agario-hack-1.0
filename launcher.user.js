@@ -1,20 +1,5 @@
-/*The MIT License (MIT)
+
 Copyright (c) 2015 mukmuk623
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.*/
 
 // ==UserScript==
 // @name        mukmuk623   
@@ -62,10 +47,10 @@ function getLatestCommit() {
                 latestVersion = latestVersion.substring(latestVersion.indexOf("// @version") + 11, latestVersion.indexOf("// @grant"));
 
                 latestVersion = parseFloat(latestVersion + 0.0000);
-                var myVersion = parseFloat(aposLauncherVersion + 0.0000);
+                var myVersion = parseFloat(mukmuk623Version + 0.0000);
 
                 if (latestVersion > myVersion) {
-                    update("mukLauncher", "launcher.user.js", "hhttps://github.com/mukmuk623/Agario-hack-1.0/blob/" + sha + "/launcher.user.js/");
+                    update("mukmuk623", "launcher.user.js", "hhttps://github.com/mukmuk623/Agario-hack-1.0/blob/" + sha + "/launcher.user.js/");
                 }
                 console.log('Current launcher.user.js Version: ' + myVersion + " on Github: " + latestVersion);
             });
@@ -2357,7 +2342,7 @@ console.log("Running Bot Launcher!");
     a.async = 1;
     a.src = g;
     m.parentNode.insertBefore(a, m)
-})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'apos');
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'muk');
 
 apos('create', 'UA-64394184-1', 'auto');
 apos('send', 'pageview');
@@ -2365,17 +2350,14 @@ apos('send', 'pageview');
 window.ignoreStream = false;
 window.refreshTwitch = function() {
     $.ajax({
-        url: "https://api.twitch.tv/kraken/streams/apostolique",
         cache: false,
         dataType: "jsonp"
     }).done(function(data) {
         if (data["stream"] == null) {
-            //console.log("Apostolique is not online!");
             window.setMessage([]);
             window.onmouseup = function() {};
             window.ignoreStream = false;
         } else {
-            //console.log("Apostolique is online!");
             if (!window.ignoreStream) {
                 window.setMessage(["twitch.tv/apostolique is online right now!", "Click the screen to open the stream!", "Press E to ignore."]);
                 window.onmouseup = function() {
